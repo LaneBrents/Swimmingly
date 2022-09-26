@@ -12,8 +12,31 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
   signup,
-  login
+  login,
+  Profile,
 };
+
+async function profile(req, res) {
+  try {
+    // find the user!
+    const user = await User.findOne({ username: req.params.username });
+    // if the user is undefined, that means the database couldn't find this user lets send an error back
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    // Find the Post's by the user
+    //.populate('user') <- user comes from the key on the post model 
+    //   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, // referencing a model < which replaces the id with the userdocument
+    const posts = await Post.find({ user: user._id }).populate("user").exec();
+    res.status(200).json({
+      data: {
+        user: user,
+      }
+    });
+  } catch (err) {
+    console.log(err.message, " <- profile controller");
+    res.status(400).json({ error: "Something went wrong" });
+  }
+}
 
 async function signup(req, res) {
   console.log(req.body, " req.body in signup", req.file);
@@ -22,7 +45,7 @@ async function signup(req, res) {
   // Create the key that we will store in the s3 bucket name
   // pupstagram/ <- will upload everything to the bucket so it appears
   // like its an a folder (really its just nested keys on the bucket)
-  const key = `pupstagram/${uuidv4()}-${req.file.originalname}`;
+  const key = `Swimmingly/${uuidv4()}-${req.file.originalname}`;
   const params = { Bucket: BUCKET_NAME, Key: key, Body: req.file.buffer };
 
   s3.upload(params, async function (err, data) {
