@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
+import ProfilePage from "../Profile/Profile";
 import userService from "../../utils/userService";
 
 function App() {
@@ -30,6 +32,10 @@ function App() {
         <Route
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route
+          path="/:username"
+          element={<ProfilePage loggedUser={user} handleLogout={handleLogout} />}
         />
       </Routes>
     );
