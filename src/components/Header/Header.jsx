@@ -7,32 +7,38 @@ export default function PageHeader({ loggedUser, handleLogout }) {
     console.log(loggedUser, "loggedUser in header");
     return (
         <>
-            <Header as="h2" floated="right">
-                <Link to="/">
+            <Header as="h2" floated="left">
+                <Link to="/dashboard">
                     <Icon name="home"></Icon>
                 </Link>
 
+                {/* {loggedUser ? (
+                    <Link to="" onClick={handleLogout}>
+                        Logout
+                    </Link>
+                ) : (
+                    <Link to={`/${loggedUser?.username}`}>Login</Link>
+                )} */}
+            </Header>
+
+            <Header as="h2" floated="center">
                 {loggedUser ? (
+                    <>
+                        <Link to="/Dashboard"> Dashboard </Link>
+                        <Link to="/MyTeamView"> My Team </Link>
+                        <Link to="EventsAndTimes"> Events </Link>
+                    </>
+                ) : null}
+            </Header>
+
+            <Header as="h2" floated="right">
+            {loggedUser ? (
                     <Link to="" onClick={handleLogout}>
                         Logout
                     </Link>
                 ) : (
                     <Link to={`/${loggedUser?.username}`}>Login</Link>
                 )}
-            </Header>
-
-            <Header as="h2">
-                {loggedUser ? (
-                    <>
-                        <Link to="/dashboard">Dashboard</Link>
-                        <Link to="/MyTeamView">My Team</Link>
-                        <Link to="EventsAndTimes">Events</Link>
-                    </>
-                ) : null}
-            </Header>
-
-
-            <Header as="h2" floated="left">
                 <Link to={`/${loggedUser?.username}`}>
                     <Image
                         src={
