@@ -1,48 +1,50 @@
 import React, { useState } from "react";
 import { Button, Form, Segment } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 
-export default function AddPostForm(props) {
-  // create the state, pay attention to how the inputs are setup!
-  const [state, setState] = useState({
-    caption: "",
-  });
-  // The function that handles the changes on the input, Look at the inputs for the name of it
-  const [selectedFile, setSelectedFile] = useState("");
+export default function noteForm(props) {
 
-  function handleFileInput(e) {
-    console.log(e.target.files, " < - this is e.target.files!");
-    setSelectedFile(e.target.files[0]);
-  }
+    const navigate = useNavigate();
 
-  function handleChange(e) {
-    setState({
-      caption: e.target.value,
+    const [state, setState] = useState({
+        note: "",
     });
-  }
 
-  function handleSubmit(e) {
-    e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("caption", state.caption);
-    props.handleAddPost(formData); // formData is the data we want to send to the server!
-  }
+    function handleChange(e) {
+        setState({
+            ...state,
+            [e.target.note]: e.target.value,
+        });
+    }
 
-  return (
-    <Segment>
-      <Form onSubmit={handleSubmit}>
-        <Form.Input
-          className="form-control"
-          name="note"
-          value={state.caption}
-          placeholder="Add a Note"
-          onChange={handleChange}
-          required
-        />
-        <Button type="submit" className="btn">
-          ADD NOTE
-        </Button>
-      </Form>
-    </Segment>
-  );
+    async function handleSubmit(e) {
+
+        e.preventDefault();
+
+        try {
+            await props.handleAddSwimmer(state);
+            navigate("/SwimmerInfo");
+        } catch (err) {
+            console.log(err, "<- in AddSwimmer")
+        }
+    }
+
+    return (
+        <Segment>
+            <Form onSubmit={handleSubmit}>
+                <Form.Input
+                    className="form-control"
+                    name="note"
+                    value={state.note}
+                    placeholder="Add A Note"
+                    onChange={handleChange}
+                    required
+                />
+                <Button type="submit" className="btn">
+                    Add A Note
+                </Button>
+            </Form>
+        </Segment>
+    );
 }

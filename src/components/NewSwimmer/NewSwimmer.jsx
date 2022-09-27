@@ -39,7 +39,7 @@ export default function NewSwimmerForm(props) {
                 <Form.Input
                     className="form-control"
                     name="name"
-                    value={state.caption}
+                    value={state.name}
                     placeholder="Name"
                     onChange={handleChange}
                     required
@@ -47,7 +47,7 @@ export default function NewSwimmerForm(props) {
                  <Form.Input
                     className="form-control"
                     name="grade"
-                    value={state.caption}
+                    value={state.grade}
                     placeholder="Grade"
                     onChange={handleChange}
                     required
@@ -55,7 +55,7 @@ export default function NewSwimmerForm(props) {
                  <Form.Input
                     className="form-control"
                     name="gender"
-                    value={state.caption}
+                    value={state.gender}
                     placeholder="Gender"
                     onChange={handleChange}
                     required
