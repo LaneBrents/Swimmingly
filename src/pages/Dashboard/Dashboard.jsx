@@ -6,11 +6,7 @@ import Calendar from "../CalendarView/CalendarView"
 import { GridColumn } from 'semantic-ui-react';
 import Loader from "../Loader/Loader";
 
-export default function Dashboard({
-    TeamInfo,
-    CreateTeam,
-    Calendar,
-}) {
+export default function Dashboard(){
     return (
         <h2>Team Info</h2>
         // <div class="TeamInfo-dashboard">
@@ -38,14 +34,6 @@ export default function Dashboard({
     return (
         <CreateTeam
             CreateTeam={CreateTeam}
-        />
-    );
-}
-
-{
-    return (
-        <Calendar
-            Calendar={Calendar}
         />
     );
 }

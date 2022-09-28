@@ -10,28 +10,16 @@ function App() {
           <th>Grade</th>
           <th>Gender</th>
           <th>Events</th>
+          <th>Notes</th>
         </tr>
         <tr>
           <td>{{Name}}</td>
           <td>{{Grade}}</td>
           <td>{{Gender}}</td>
           <td>{{Events}}</td>
+          <td>{{Note}}</td>
         </tr>
       </table>
-    </div>
-  );
-}
-function App() {
-    return (
-    <div className="Notes">
-        <table>
-            <tr>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>{{Note}}</td>
-            </tr>
-        </table>
     </div>
   );
 }

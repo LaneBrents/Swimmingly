@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import PageHeader from "../../components/Header/Header";
+import Loading from "../../components/Loader/Loader";
   
 export default function MyTeam() {
   return (
