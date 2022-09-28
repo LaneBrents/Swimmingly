@@ -8,7 +8,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
     return (
         <>
             <Header as="h2" floated="left">
-                <Link to="/pages/Dashboard">
+                <Link to="/Dashboard">
                     <Icon name="home"></Icon>
                 </Link>
 
@@ -24,9 +24,9 @@ export default function PageHeader({ loggedUser, handleLogout }) {
             <Header as="h2" floated="center">
                 {loggedUser ? (
                     <>
-                        <Link to="/pages/Dashboard"> Dashboard </Link>
-                        <Link to="/pages/MyTeam"> My Team </Link>
-                        <Link to="/pages/Heatsheet"> Heatsheet </Link>
+                        <Link to="/Dashboard"> Dashboard </Link>
+                        <Link to="/MyTeam"> My Team </Link>
+                        <Link to="/Heatsheet"> Heatsheet </Link>
                     </>
                 ) : null}
             </Header>

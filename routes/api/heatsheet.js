@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const heatsheetCtrl = require()
+const heatsheetCtrl = require('../../controllers/heatsheet')
 
 router.post("/", heatsheetCtrl.create);
 router.get("/", heatsheetCtrl.index);
-router.delete("/:id", heatsheetCtrl.delete);
-//router.get("")
+router.delete("/:id", heatsheetCtrl.deleteHeatsheet);
+router.get("/Heatsheet/:heatsheetId", teamCtrl.getHeatsheet);
+
 module.exports = router;
