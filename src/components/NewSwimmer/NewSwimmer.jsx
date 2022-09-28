@@ -10,6 +10,7 @@ export default function NewSwimmerForm(props) {
         name: "",
         grade: "",
         gender: "",
+        events: "",
     });
 
 
@@ -60,8 +61,16 @@ export default function NewSwimmerForm(props) {
                     onChange={handleChange}
                     required
                 />
+                <Form.Input
+                    className="form-control"
+                    name="events"
+                    value={state.events}
+                    placeholder="Events"
+                    onChange={handleChange}
+                    required
+                />
                 <Button type="submit" className="btn">
-                    Add Swimmer
+                    Add Swimmer and Events
                 </Button>
             </Form>
         </Segment>

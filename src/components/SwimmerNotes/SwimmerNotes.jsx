@@ -14,7 +14,7 @@ export default function noteForm(props) {
     function handleChange(e) {
         setState({
             ...state,
-            [e.target.note]: e.target.value,
+            [e.target.name]: e.target.value,
         });
     }
 

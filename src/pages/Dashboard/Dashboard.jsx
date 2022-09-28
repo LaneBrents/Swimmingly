@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader from '../../components/Header/Header';
 
 import CreateTeam from "../CreateTeam/CreateTeam"
 import Calendar from "../CalendarView/CalendarView"
