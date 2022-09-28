@@ -1,10 +1,9 @@
 import React from 'react';
-import NewSwimmerForm from '../NewSwimmer/NewSwimmer';
 import './App.css';
   
-function App() {
+export default function MyTeam() {
   return (
-    <div className="App">
+    <div className="MyTeam">
       <table>
         <tr>
           <th>Name</th>
@@ -13,14 +12,12 @@ function App() {
           <th>Events</th>
         </tr>
         <tr>
-          <td>{{Name}}</td>
-          <td>{{Grade}}</td>
-          <td>{{Gender}}</td>
-          <td>{{Events}}</td>
+          <td>{{ Name }}</td>
+          <td>{{ Grade }}</td>
+          <td>{{ Gender }}</td>
+          <td>{{ Events }}</td>
         </tr>
       </table>
     </div>
   );
 }
-  
-export default App;

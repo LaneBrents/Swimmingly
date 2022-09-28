@@ -3,6 +3,8 @@ const Swimmer = require("../models/swimmer");
 module.exports = {
     create,
     index,
+    update,
+    edit,
     deleteSwimmer,
     getSwimmer
 };
@@ -51,4 +53,20 @@ async function getSwimmer(req, res){
     } catch(err) {
         res.status(400).json({ err });
     }
+}
+
+function edit(req, res) {
+    Swimmer.findById(req.params.id, function (err, swimmerDocumentCreated) {
+        res.render('applications/edit.ejs', {
+            swimmer: swimmerDocumentCreated,
+        });
+    });
+}
+
+function update(req, res) {
+    Swimmer.findByIdAndUpdate(req.params.id, req.body, function (err, swimmerDocumentCreated) {
+        swimmerDocumentCreated.save(function (err) {
+            res.redirect('/MyTeam');
+        });
+    });
 }
