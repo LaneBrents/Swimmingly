@@ -37,6 +37,7 @@ export default function NewSwimmerForm(props) {
     return (
         <Segment>
             <Form onSubmit={handleSubmit}>
+                <h2>Add a New Swimmer:</h2>
                 <Form.Input
                     className="form-control"
                     name="name"
