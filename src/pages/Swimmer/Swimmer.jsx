@@ -1,8 +1,11 @@
 import React from 'react';
-import './App.css';
-  
-function App() {
+import PageHeader from '../../components/Header/Header';
+
+
+export default function SwimmerPage({ loggedUser, handleLogout }) {
   return (
+    <>
+    <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
     <div className="App">
       <table>
         <tr>
@@ -13,15 +16,14 @@ function App() {
           <th>Notes</th>
         </tr>
         <tr>
-          <td>{{Name}}</td>
+          {/* <td>{{Name}}</td>
           <td>{{Grade}}</td>
           <td>{{Gender}}</td>
           <td>{{Events}}</td>
-          <td>{{Note}}</td>
+          <td>{{Note}}</td> */}
         </tr>
       </table>
     </div>
+    </>
   );
 }
-  
-export default App;

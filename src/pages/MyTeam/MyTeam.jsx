@@ -1,9 +1,12 @@
 import React from 'react';
 import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
+import NewSwimmerForm from '../../components/NewSwimmer/NewSwimmer';
   
-export default function MyTeam() {
+export default function MyTeam({ loggedUser, handleLogout }) {
   return (
+    <>
+    <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
     <div className="MyTeam">
       <table>
         <tr>
@@ -12,13 +15,15 @@ export default function MyTeam() {
           <th>Gender</th>
           <th>Events</th>
         </tr>
-        <tr>
+        {/* <tr>
           <td>{{ Name }}</td>
           <td>{{ Grade }}</td>
           <td>{{ Gender }}</td>
           <td>{{ Events }}</td>
-        </tr>
+        </tr> */}
       </table>
     </div>
+    <NewSwimmerForm />
+    </>
   );
 }

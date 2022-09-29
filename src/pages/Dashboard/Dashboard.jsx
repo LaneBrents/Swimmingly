@@ -1,14 +1,17 @@
 import React from 'react';
-import PageHeader from '../../components/Header/Header';
-
-import CreateTeam from "../CreateTeam/CreateTeam"
-import Calendar from "../CalendarView/CalendarView"
+import PageHeader from "../../components/Header/Header";
+// import CreateTeam from "../CreateTeam/CreateTeam"
+import NewSwimmer from '../../components/NewSwimmer/NewSwimmer';
 import { GridColumn } from 'semantic-ui-react';
-import Loader from "../Loader/Loader";
+// import Loader from "../Loader/Loader";
 
-export default function Dashboard(){
+export default function Dashboard({ loggedUser, handleLogout }) {
     return (
-        <h2>Team Info</h2>
+        <>
+             <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
+
+            <h2>Team Info</h2>
+        </>
         // <div class="TeamInfo-dashboard">
         //     <Grid>
         //         <Grid.Row centered>
@@ -29,11 +32,11 @@ export default function Dashboard(){
         //     </Grid>
         // </div>
     );
-}
-{
-    return (
-        <CreateTeam
-            CreateTeam={CreateTeam}
-        />
-    );
+    // }
+    // {
+    //     return (
+    //         <CreateTeam
+    //             CreateTeam={CreateTeam}
+    //         />
+    //     );
 }

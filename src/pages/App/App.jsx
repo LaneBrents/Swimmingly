@@ -8,6 +8,11 @@ import ProfilePage from "../Profile/Profile";
 
 import userService from "../../utils/userService";
 
+import HeatsheetPage from "../Heatsheet/Heatsheet";
+import MyTeamPage from "../MyTeam/MyTeam";
+import SwimmerPage from "../Swimmer/Swimmer";
+import Dashboard from "../Dashboard/Dashboard";
+
 function App() {
   const [user, setUser] = useState(userService.getUser()); // getUser decodes our JWT token, into a javascript object
   // this object corresponds to the jwt payload which is defined in the server signup or login function that looks like
@@ -38,7 +43,24 @@ function App() {
           path="/:username"
           element={<ProfilePage loggedUser={user} handleLogout={handleLogout} />}
         />
+        <Route
+          path="/heatsheet"
+          element={<HeatsheetPage loggedUser={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/myteam"
+          element={<MyTeamPage loggedUser={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/swimmer"
+          element={<SwimmerPage loggedUser={user} handleLogout={handleLogout} />}
+        />
+        <Route
+          path="/dashboard"
+          element={<Dashboard loggedUser={user} handleLogout={handleLogout} />}
+        />
       </Routes>
+
     );
   }
 

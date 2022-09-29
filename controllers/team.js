@@ -12,9 +12,6 @@ async function create(req, res) {
     try {
         const team = await Team.create({
             name: req.body.name,
-            grade: req.body.grade,
-            gender: req.body.gender,
-            events: req.body.events,
         });
 
         res.status(201).json({ data: team });
