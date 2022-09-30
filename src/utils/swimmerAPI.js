@@ -35,7 +35,6 @@ export function getAllSwimmers() {
     });
   }
 
-
 export function getSwimmer() {
     return fetch(BASE_URL, {
       headers: {
@@ -64,15 +63,3 @@ export function getSwimmer() {
       throw new Error(res.error, '<< res.error from deleteSwimmer(): swimmerAPI');
     });
   }
-
-//   export function updateSwimmer(swimmerID) {
-//     return fetch(`${BASE_URL}/${swimmerID}`, {
-//         method: 'UPDATE',
-//         headers: {
-//           Authorization: 'Bearer ' + tokenService.getToken(),
-//         },
-//       }).then((res) => {
-//         if (res.ok) return res.json();
-//         throw new Error(res.error, '<< res.error from deleteSwimmer(): swimmerAPI');
-//       });
-//     }

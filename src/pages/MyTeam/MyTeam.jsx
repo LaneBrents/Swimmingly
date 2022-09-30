@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
 import NewSwimmerForm from '../../components/NewSwimmer/NewSwimmer';
+// import AddTeamForm from '../../components/CreateTeam/CreateTeam';
 import * as swimmerAPI from "../../utils/swimmerAPI"; 
 
 export default function MyTeam({ loggedUser, handleLogout }) {
@@ -58,6 +59,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
             <Grid.Row>
                 <Grid.Column>
                     <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
+                    {/* <AddTeamForm value={team.name} /> */}
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>

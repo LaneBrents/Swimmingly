@@ -62,10 +62,7 @@ export default function HeatsheetPage({ loggedUser, handleLogout }) {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-          {/* <Heatsheet
-            heatsheet={heatsheet}
-            numPhotosCol={1}
-          /> */}
+        {heatsheet.map((heatsheet) => <>{heatsheet.image}</>)}
         </Grid.Column>
       </Grid.Row>
     </Grid>

@@ -32,6 +32,7 @@ export default function AddHeatsheetForm(props) {
   return (
     <Segment>
       <Form onSubmit={handleSubmit}>
+        <h2>Add a Heatsheet:</h2>
         <Form.Input
           className="form-control"
           name="meet"
