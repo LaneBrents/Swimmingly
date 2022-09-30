@@ -26,7 +26,7 @@ function App() {
     userService.logout();
     setUser(null);
   }
-
+console.log('this is the user', user);
   if (user) {
     return (
       <Routes>

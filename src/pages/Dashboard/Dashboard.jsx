@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import PageHeader from "../../components/Header/Header";
 import { Grid } from 'semantic-ui-react';
@@ -12,6 +12,21 @@ export default function Dashboard({ loggedUser, handleLogout }) {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
     const [team, setTeam] = useState([]);
+
+    async function getTeam() {
+        try {
+            const response = await teamAPI.getTeam();
+            setTeam([...response.data]);
+            setLoading(false);
+        } catch(err) {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+
+        getTeam();
+    }, []);
 
     async function handleAddTeam(team) {
         try {
@@ -36,8 +51,8 @@ export default function Dashboard({ loggedUser, handleLogout }) {
     }
 
     return (
-        <>
-            <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
+        <> 
+             <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
             <div className="MyDashboard">
                 <h2>Welcome to Swimmingly!</h2>
                 <p>Swimmingly is an easy team manager that tracks your swim teams members as well as their times and events</p>
@@ -45,18 +60,17 @@ export default function Dashboard({ loggedUser, handleLogout }) {
             </div>
             <Grid>
                 <Grid.Row centered>
-                    {/* I want this to be accordion and/or have dropdown but first I need to make sure the API calls work for it */}
-                    <AddTeamForm handleAddTeam={handleAddTeam} />
+                     <AddTeamForm handleAddTeam={handleAddTeam} />
                 </Grid.Row>
                 <Grid.Row centered>
                     <Grid.Column style={{ maxWidth: 750 }}>
-                        <MyTeam
+                        {/* <MyTeam
                             team={team}
                             handleDeleteTeam={handleDeleteTeam}
-                            itemsPerRow={3} />
+                            itemsPerRow={3} /> */}
                     </Grid.Column>
                 </Grid.Row>
-            </Grid>
+            </Grid> 
         </>
     );
 }

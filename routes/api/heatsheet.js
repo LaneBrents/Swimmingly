@@ -5,6 +5,6 @@ const heatsheetCtrl = require('../../controllers/heatsheet')
 router.post("/", heatsheetCtrl.create);
 router.get("/", heatsheetCtrl.index);
 router.delete("/:id", heatsheetCtrl.deleteHeatsheet);
-router.get("/Heatsheet/:heatsheetId", teamCtrl.getHeatsheet);
+router.get("/Heatsheet/:heatsheetId", heatsheetCtrl.getHeatsheet);
 
 module.exports = router;

@@ -3,8 +3,8 @@ const Heatsheet = require("../models/heatsheet");
 module.exports = {
     create,
     index,
-    deleteTeam,
-    getTeam
+    deleteHeatsheet,
+    getHeatsheet
 };
 
 

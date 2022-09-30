@@ -24,10 +24,10 @@ export default function NewSwimmerForm(props) {
     async function handleSubmit(e) {
 
         e.preventDefault();
-
+        console.log(state, 'this is the state');
         try {
             await props.handleAddSwimmer(state);
-            navigate("/MyTeamView");
+            // navigate("/MyTeamView");
         } catch (err) {
             console.log(err, "<- in AddSwimmer")
         }

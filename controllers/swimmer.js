@@ -11,6 +11,7 @@ module.exports = {
 
 
 async function create(req, res) {
+    console.log(req.body, '~~~~~~~~~~~~~~~~~');
     try {
         const swimmer = await Swimmer.create({
             name: req.body.name,
@@ -28,7 +29,7 @@ async function create(req, res) {
 
 async function index(req, res) {
     try {
-        const swimmers = await Swimmer.find({}).populate("user").exec();
+        const swimmers = await Swimmer.find({});
         res.status(200).json({ data: swimmers });
     } catch (err) {
         res.status(400).json({ err });

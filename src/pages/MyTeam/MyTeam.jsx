@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid } from 'semantic-ui-react';
 import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
@@ -9,31 +9,48 @@ export default function MyTeam({ loggedUser, handleLogout }) {
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
-    const [swimmer, setSwimmer] = useState([]);
+    const [swimmer, setSwimmer] = useState({});
+    
+    const [swimmers, setSwimmers] = useState([]);
+
+    async function getAllSwimmers() {
+        try {
+            const response = await swimmerAPI.getSwimmer();
+            setSwimmers([...response.data]);
+            setLoading(false);
+        } catch(err) {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+
+        getAllSwimmers();
+    }, []);
+
 
     async function handleAddSwimmer(swimmer) {
         try {
             setLoading(true);
             const response = await swimmerAPI.create(swimmer);
             console.log(response);
-            getSwimmer();
+
+            getAllSwimmers();
             setLoading(false);
         } catch (err) {
             console.log("Error in the handleAddSwimmer function: ", err);
         }
     }
 
-    async function handleDeleteSwimmer(swimmer) {
+    async function handleDeleteSwimmer(swimmerId) {
         try {
-            const response = await teamAPI.deleteSwimmer(swimmer);
+            const response = await swimmerAPI.deleteSwimmer(swimmerId);
             console.log(response);
-            getSwimmer();
+            getAllSwimmers();
         } catch (err) {
             console.log("Error in the handleDeleteSwimmer function");
         }
     }
-
-
 
 
     return (
@@ -50,13 +67,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <MyTeam
-                        swimmer={swimmer}
-                        // name={Name}
-                        // grade={Grade}
-                        // gender={Gender}
-                        // events={Events}
-                    />
+                {swimmers.map((swimmer) => <>{swimmer.name}</>)}
                 </Grid.Column>
             </Grid.Row>
         </Grid>
