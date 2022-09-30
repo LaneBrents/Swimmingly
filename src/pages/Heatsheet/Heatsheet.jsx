@@ -10,12 +10,30 @@ export default function HeatsheetPage({ loggedUser, handleLogout }) {
     const [loading, setLoading] = useState(true);
     const [heatsheet, setHeatsheet] = useState([]);
 
+    const [heatsheets, setHeatsheets] = useState([]);
+
+    async function getAllHeatsheets() {
+        try {
+            const response = await heatsheetAPI.getHeatsheet();
+            setHeatsheets([...response.data]);
+            setLoading(false);
+        } catch (err) {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+
+        getAllHeatsheets();
+    }, []);
+
+
     async function getHeatsheet() {
         try {
             const response = await heatsheetAPI.getHeatsheet();
             setHeatsheet([...response.data]);
             setLoading(false);
-        } catch(err) {
+        } catch (err) {
             setLoading(false);
         }
     }
@@ -49,22 +67,28 @@ export default function HeatsheetPage({ loggedUser, handleLogout }) {
     }
 
     return (
-<Grid centered>
-      <Grid.Row>
-        <Grid.Column>
-          <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <AddHeatsheetForm handleAddHeatsheet={handleAddHeatsheet} />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
-        {heatsheet.map((heatsheet) => <>{heatsheet.image}</>)}
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  );
+        <Grid centered>
+            <Grid.Row>
+                <Grid.Column>
+                    <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
+                </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+                <Grid.Column style={{ maxWidth: 450 }}>
+                    <AddHeatsheetForm handleAddHeatsheet={handleAddHeatsheet} />
+                </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+                <Grid.Column style={{ maxWidth: 450 }}>
+                {heatsheets.map((heatsheet) =>
+                        <>
+                            <tr>
+                                <td>{heatsheet.image}</td>
+                            </tr>
+                        </>
+                    )}
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+    );
 }

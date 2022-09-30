@@ -51,10 +51,10 @@ console.log('this is the user', user);
           path="/myteam"
           element={<MyTeamPage loggedUser={user} handleLogout={handleLogout} />}
         />
-        <Route
+        {/* <Route
           path="/swimmer"
           element={<SwimmerPage loggedUser={user} handleLogout={handleLogout} />}
-        />
+        /> */}
         <Route
           path="/dashboard"
           element={<Dashboard loggedUser={user} handleLogout={handleLogout} />}

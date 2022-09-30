@@ -4,14 +4,14 @@ import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
 import NewSwimmerForm from '../../components/NewSwimmer/NewSwimmer';
 // import AddTeamForm from '../../components/CreateTeam/CreateTeam';
-import * as swimmerAPI from "../../utils/swimmerAPI"; 
+import * as swimmerAPI from "../../utils/swimmerAPI";
 
 export default function MyTeam({ loggedUser, handleLogout }) {
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
     const [swimmer, setSwimmer] = useState({});
-    
+
     const [swimmers, setSwimmers] = useState([]);
 
     async function getAllSwimmers() {
@@ -19,7 +19,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
             const response = await swimmerAPI.getSwimmer();
             setSwimmers([...response.data]);
             setLoading(false);
-        } catch(err) {
+        } catch (err) {
             setLoading(false);
         }
     }
@@ -68,8 +68,25 @@ export default function MyTeam({ loggedUser, handleLogout }) {
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
+                <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Gender</th>
+                    <th>Events</th>
+                </tr>
+            </Grid.Row>
+            <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                {swimmers.map((swimmer) => <>{swimmer.name}</>)}
+                    {swimmers.map((swimmer) =>
+                        <>
+                            <tr>
+                                <td>{swimmer.name}</td>
+                                <td>{swimmer.grade}</td>
+                                <td>{swimmer.gender}</td>
+                                <td>{swimmer.events}</td>
+                            </tr>
+                        </>
+                    )}
                 </Grid.Column>
             </Grid.Row>
         </Grid>

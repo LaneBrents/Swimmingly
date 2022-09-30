@@ -40,7 +40,7 @@ async function signup(req, res) {
   // Create the key that we will store in the s3 bucket name
   // pupstagram/ <- will upload everything to the bucket so it appears
   // like its an a folder (really its just nested keys on the bucket)
-  const key = `Swimmingly/${uuidv4()}-${req.file.originalname}`;
+  const key = `swimmingly/${uuidv4()}-${req.file.originalname}`;
   const params = { Bucket: BUCKET_NAME, Key: key, Body: req.file.buffer };
 
   s3.upload(params, async function (err, data) {
