@@ -64,7 +64,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <NewSwimmerForm handleAddSwimmer={handleAddSwimmer} />
+                    <NewSwimmerForm handleAddSwimmer={handleAddSwimmer} handleDeleteSwimmer={handleDeleteSwimmer} />
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -73,6 +73,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
                     <th>Grade</th>
                     <th>Gender</th>
                     <th>Events</th>
+                    <th>Delete</th>
                 </tr>
             </Grid.Row>
             <Grid.Row>
@@ -84,6 +85,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
                                 <td>{swimmer.grade}</td>
                                 <td>{swimmer.gender}</td>
                                 <td>{swimmer.events}</td>
+                                <td><button>Delete {handleDeleteSwimmer}</button></td>
                             </tr>
                         </>
                     )}
