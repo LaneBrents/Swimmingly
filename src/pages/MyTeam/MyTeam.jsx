@@ -6,7 +6,7 @@ import NewSwimmerForm from '../../components/NewSwimmer/NewSwimmer';
 // import AddTeamForm from '../../components/CreateTeam/CreateTeam';
 import * as swimmerAPI from "../../utils/swimmerAPI";
 
-export default function MyTeam({ loggedUser, handleLogout }) {
+export default function MyTeam({ loggedUser, handleLogout, handleDeleteSwimmer }) {
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
@@ -85,7 +85,7 @@ export default function MyTeam({ loggedUser, handleLogout }) {
                                 <td>{swimmer.grade}</td>
                                 <td>{swimmer.gender}</td>
                                 <td>{swimmer.events}</td>
-                                <td><button>Delete {handleDeleteSwimmer}</button></td>
+                                <td><button handleDeleteSwimmer={handleDeleteSwimmer}>Delete</button></td>
                             </tr>
                         </>
                     )}
