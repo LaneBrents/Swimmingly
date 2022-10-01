@@ -47,7 +47,7 @@ async function index(req, res) {
 
 async function deleteSwimmer(req, res){
     try {
-        await Swimmer.findByIdAndDelete(req.params.id)
+        await Swimmer.findByIdAndDelete({ _id: req.params.id})
         res.status(201).json({});
     } catch(err) {
         res.status(400).json({ err });

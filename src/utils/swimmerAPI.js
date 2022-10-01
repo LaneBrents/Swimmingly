@@ -56,6 +56,7 @@ export function getSwimmer() {
     return fetch(`${BASE_URL}/${swimmerID}`, {
       method: 'DELETE',
       headers: {
+        'Content-Type': 'application/json',
         Authorization: 'Bearer ' + tokenService.getToken(),
       },
     }).then((res) => {

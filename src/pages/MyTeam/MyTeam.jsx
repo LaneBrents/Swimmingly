@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import PageHeader from "../../components/Header/Header";
 import Loading from "../../components/Loader/Loader";
 import NewSwimmerForm from '../../components/NewSwimmer/NewSwimmer';
+import SwimmerComponent from '../../components/Swimmer/Swimmer';
+import SwimmerGallery from '../../components/SwimmerGallery/SwimmerGallery';
 // import AddTeamForm from '../../components/CreateTeam/CreateTeam';
 import * as swimmerAPI from "../../utils/swimmerAPI";
 
@@ -35,7 +37,6 @@ export default function MyTeam({ loggedUser, handleLogout, handleDeleteSwimmer }
             setLoading(true);
             const response = await swimmerAPI.create(swimmer);
             console.log(response);
-
             getAllSwimmers();
             setLoading(false);
         } catch (err) {
@@ -55,6 +56,23 @@ export default function MyTeam({ loggedUser, handleLogout, handleDeleteSwimmer }
 
 
     return (
+//         <Container>
+//             <PageHeader handleLogout={handleLogout} loggedUser={loggedUser} />
+
+//             <Grid>
+//                 <Grid.Row centered>
+//                 <NewSwimmerForm handleAddSwimmer={handleAddSwimmer} />
+//                 </Grid.Row>
+//                 <Grid.Row centered>
+//                     <Grid.Column style={{ maxWidth: 750 }}>
+//                         <SwimmerGallery />
+//                     </Grid.Column>
+//                 </Grid.Row>
+//             </Grid>
+//         </Container>
+//     )
+// }
+
         <Grid centered>
             <Grid.Row>
                 <Grid.Column>
@@ -64,7 +82,11 @@ export default function MyTeam({ loggedUser, handleLogout, handleDeleteSwimmer }
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column style={{ maxWidth: 450 }}>
-                    <NewSwimmerForm handleAddSwimmer={handleAddSwimmer} handleDeleteSwimmer={handleDeleteSwimmer} />
+                    <NewSwimmerForm handleAddSwimmer={handleAddSwimmer} />
+                    {/* <SwimmerGallery
+                    // swimmer={swimmer}
+                    handleDeleteSwimmer={handleDeleteSwimmer}
+                    /> */}
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
