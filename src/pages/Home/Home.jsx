@@ -47,15 +47,17 @@ export default function Home({ handleLogout }) {
     }
 
     return (
-        <Container className='background'>
+        <Container>
+            <img className='backgroundImg' src={'https://i.imgur.com/UeA0BjR.jpg'} >
+            </img>
             <PageHeader className="home-header" handleLogout={handleLogout} />
-            <div className="WelcomeText" style={{backgroundImage: `url(https://imgur.com/UeA0BjR)`}}>
+            <div className="WelcomeText">
                 <h1>Welcome to Swimmingly!</h1>
                 <h3>Swimmingly is an easy team manager that tracks your swim teams members as well as their times and events</h3>
             </div>
             <Grid>
                 <Grid.Row centered>
-                    <AddSwimmer handleAddSwimmer={handleAddSwimmer} />
+                    <AddSwimmer className="AddSwimmer" handleAddSwimmer={handleAddSwimmer} />
                 </Grid.Row>
                 <Grid.Row centered>
                     <Grid.Column style={{ maxWidth: 750 }}>
