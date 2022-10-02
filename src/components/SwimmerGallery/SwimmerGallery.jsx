@@ -1,24 +1,22 @@
 import React from 'react';
-import { Table } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import SwimmerComponent from '../Swimmer/Swimmer';
 
-export default function SwimmerGallery({ swimmers, handleDeleteSwimmer }) {
+export default function SwimmerGallery({ swimmers, itemsPerRow, handleDeleteSwimmer }) {
 
     return (
         <>
-            <Table stackable>
+            <Card.Group itemsPerRow={itemsPerRow} stackable>
                 {swimmers.map((swimmer) => {
                     return (
                         <SwimmerComponent
-                        swimmer={swimmer}
-                        key={swimmer._id}
-                        handleDeleteSwimmer={handleDeleteSwimmer}
+                            swimmer={swimmer}
+                            key={swimmer._id}
+                            handleDeleteSwimmer={handleDeleteSwimmer}
                         />
                     )
                 })}
-            </Table>
+            </Card.Group>
         </>
     )
-
-
 }

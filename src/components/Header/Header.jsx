@@ -7,18 +7,17 @@ export default function PageHeader({ loggedUser, handleLogout }) {
     return (
         <>
             <Header as="h2" floated="left">
-                <Link to="/dashboard">
+                <Link to="/">
                     <Icon name="home"></Icon>
                 </Link>
-
             </Header>
 
             <Header as="h2" floated="center">
                 {loggedUser ? (
                     <>
-                        <Link to="/dashboard"> Dashboard </Link>
-                        <Link to="/MyTeam"> My Team </Link>
-                        <Link to="/Heatsheet"> Heatsheet </Link>
+                        <Link to="/"> Home </Link>
+                        {/* <Link to="/MyTeam"> My Team </Link>
+                        <Link to="/Heatsheet"> Heatsheet </Link> */}
                     </>
                 ) : null}
             </Header>

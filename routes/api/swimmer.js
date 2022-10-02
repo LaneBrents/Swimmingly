@@ -3,10 +3,10 @@ const router = express.Router();
 const swimmerCtrl = require('../../controllers/swimmer')
 
 router.post("/", swimmerCtrl.create);
-router.get("/", swimmerCtrl.index);
-router.get('/:id/edit', swimmerCtrl.edit);
+router.get('/', swimmerCtrl.getUserSwimmers);
 router.delete("/:id", swimmerCtrl.deleteSwimmer);
-router.get("/Swimmer/:swimmerId", swimmerCtrl.getSwimmer);
-router.put('/:id', swimmerCtrl.update);
+// router.put('/:id', swimmerCtrl.update);
+// router.get("/", swimmerCtrl.index);
+// router.get('/:id/edit', swimmerCtrl.edit);
 
 module.exports = router;
