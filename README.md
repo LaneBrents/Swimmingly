@@ -3,7 +3,7 @@
 Swimmingly allows highschool and college swim coaches to create a roster of their athletes to keep track of their information, events, times, notes, as well as their meet heatsheets for them to view.
 # <span style="font-family:Papyrus; color:dodgerblue">Deployed Link</span>
 ---
-Click [here]() to deploy app.
+Click [here](https://swimmingly123.herokuapp.com/login) to deploy app.
 ## <span style="font-family:Papyrus; color:dodgerblue">Images</span>
 ---
 ![](https://i.imgur.com/VRRpHSr.jpg)
