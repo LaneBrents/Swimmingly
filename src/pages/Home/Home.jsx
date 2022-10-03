@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PageHeader from "../../components/Header/Header";
-import { Header, Grid, Container } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 
 import "./Home.css";
 import AddSwimmer from '../../components/AddSwimmer/AddSwimmer';
@@ -51,6 +51,7 @@ export default function Home({ handleLogout }) {
             <img className='backgroundImg' src={'https://i.imgur.com/UeA0BjR.jpg'} >
             </img>
             <PageHeader handleLogout={handleLogout} />
+            <br />
             <div className="WelcomeText">
                 <h1>Welcome to Swimmingly!</h1>
                 <h3>Swimmingly is an easy team manager that tracks your swim teams members as well as their times and events</h3>
