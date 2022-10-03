@@ -37,7 +37,7 @@ export default function LoginPage(props) {
       // Route to wherever you want!
       props.handleSignUpOrLogin();
 
-      navigate("/dashboard");
+      navigate("/home");
 
     } catch (err) {
       // Invalid user data (probably duplicate email)
@@ -54,7 +54,7 @@ export default function LoginPage(props) {
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" color="teal" textAlign="center">
-            <Image src="https://i.imgur.com/s4LrnlU.png" /> Log-in to your
+            <Image src="https://i.imgur.com/Ql22AuM.png" /> Log-in to your
             account
           </Header>
           <Form onSubmit={handleSubmit}>

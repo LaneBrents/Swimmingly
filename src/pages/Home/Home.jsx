@@ -54,6 +54,7 @@ export default function Home({ handleLogout }) {
             <div className="WelcomeText">
                 <h1>Welcome to Swimmingly!</h1>
                 <h3>Swimmingly is an easy team manager that tracks your swim teams members as well as their times and events</h3>
+                <br />
             </div>
             <Grid>
                 <Grid.Row centered>

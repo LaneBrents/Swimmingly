@@ -8,7 +8,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
         <>
             <Header as="h2" floated="left">
                 <Link to="/">
-                    <Icon name="home"></Icon>
+                    <Icon style={{ color: 'white' }} name="home"></Icon>
                 </Link>
             </Header>
 
@@ -23,13 +23,13 @@ export default function PageHeader({ loggedUser, handleLogout }) {
             </Header>
 
             <Header as="h2" floated="right">
-                <Link to="" onClick={handleLogout}>
+                <Link to="" onClick={handleLogout} style={{ color: 'white', fontSize: '30px', fontFamily: 'Nunito, sans-serif;', color: 'whitesmoke', textShadow: '2px 2px 4px black' }}>
                     Logout
                 </Link>
+            </Header>
+            {/* <Link to={`/${loggedUser?.username}`}>Login</Link>  */}
 
-                {/* <Link to={`/${loggedUser?.username}`}>Login</Link> */}
-
-                <Link to={`/${loggedUser?.username}`}>
+            {/* <Link to={`/${loggedUser?.username}`}>
                     <Image
                         src={
                             loggedUser?.photoUrl
@@ -38,8 +38,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
                         }
                         avatar
                     ></Image>
-                </Link>
-            </Header>
+                </Link> */}
         </>
     );
 }

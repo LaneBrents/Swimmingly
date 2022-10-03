@@ -45,10 +45,10 @@ function App() {
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
-        <Route
+        {/* <Route
           path="/:username"
           element={<ProfilePage loggedUser={user} handleLogout={handleLogout} />}
-        />
+        /> */}
         {/* <Route
           path="/heatsheet"
           element={<HeatsheetPage loggedUser={user} handleLogout={handleLogout} />}

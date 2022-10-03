@@ -35,7 +35,7 @@ export default function AddSwimmer({ handleAddSwimmer }) {
 
 
         return (
-            <Card>
+            <Card style={{width:'70%',}}>
                 <Form onSubmit={handleSubmit}>
                     <h2>Add a New Swimmer:</h2>
                     <Form.Input

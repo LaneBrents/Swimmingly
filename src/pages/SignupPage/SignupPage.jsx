@@ -73,7 +73,7 @@ export default function SignUpPage(props) {
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="teal" textAlign="center">
-          <Image src="https://i.imgur.com/s4LrnlU.png" /> Sign Up
+          <Image src="https://i.imgur.com/Ql22AuM.png" /> Sign Up
         </Header>
         <Form onSubmit={handleSubmit}>
           <Segment stacked>
