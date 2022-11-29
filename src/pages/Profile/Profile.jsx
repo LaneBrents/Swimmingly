@@ -10,7 +10,7 @@ import userService from "../../utils/userService";
 import { useParams } from "react-router-dom";
 
 export default function ProfilePage({ loggedUser, handleLogout }) {
-  const [profileUser, setProfileUser] = useState({});
+  const [setProfileUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 

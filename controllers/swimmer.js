@@ -13,7 +13,7 @@ module.exports = {
     create,
     deleteSwimmer,
     getUserSwimmers,
-     // index,
+    // index,
     // update,
     // edit,
 };
@@ -36,24 +36,24 @@ async function create(req, res) {
     }
 }
 
-async function deleteSwimmer(req, res){
+async function deleteSwimmer(req, res) {
     try {
-        await Swimmer.findOneAndDelete({ _id: req.params.id});
+        await Swimmer.findOneAndDelete({ _id: req.params.id });
         console.log('swimmer was deleted')
-        res.json({data: "swimmer and data was removed"});
-    } catch(err) {
+        res.json({ data: "swimmer and data was removed" });
+    } catch (err) {
         res.status(400).json({ err });
     }
 }
 
 
-async function getUserSwimmers(req, res){
+async function getUserSwimmers(req, res) {
     try {
         const swimmers = await Swimmer.find({ user: req.user._id }).exec();
         res.status(200).json({
             data: swimmers
         });
-    } catch(err) {
+    } catch (err) {
         res.status(400).json({ err });
     }
 }

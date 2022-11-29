@@ -3,7 +3,7 @@ import { Card, Form, Button, Segment } from "semantic-ui-react";
 
 export default function SwimmerComponent({ swimmer, handleDeleteSwimmer }) {
 
-    const [state, setState] = useState(false);
+    const [setState] = useState(false);
 
 
     function handleSubmit(e) {

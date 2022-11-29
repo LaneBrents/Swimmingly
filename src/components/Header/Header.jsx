@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Header, Segment, Image, Icon } from "semantic-ui-react";
+import { Header, Icon } from "semantic-ui-react";
 
 export default function PageHeader({ loggedUser, handleLogout }) {
     console.log(loggedUser, "loggedUser in header");
@@ -23,7 +23,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
             </Header>
 
             <Header as="h2" floated="right">
-                <Link to="" onClick={handleLogout} style={{ color: 'white', fontSize: '30px', fontFamily: 'Nunito, sans-serif;', color: 'whitesmoke', textShadow: '2px 2px 4px black' }}>
+                <Link to="" onClick={handleLogout} style={{ fontSize: '30px', fontFamily: 'Nunito, sans-serif;', color: 'whitesmoke', textShadow: '2px 2px 4px black' }}>
                     Logout
                 </Link>
             </Header>

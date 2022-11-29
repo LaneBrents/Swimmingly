@@ -24,14 +24,14 @@ export default function SignUpPage(props) {
 
   const [selectedFile, setSelectedFile] = useState("");
 
-  const navigate = useNavigate();
-
   function handleChange(e) {
     setState({
       ...state,
       [e.target.name]: e.target.value,
     });
   }
+
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();

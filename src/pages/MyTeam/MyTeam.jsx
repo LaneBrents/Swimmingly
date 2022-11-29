@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PageHeader from '../../components/Header/Header';
 import SwimmerComponent from '../../components/Swimmer/Swimmer';
 

@@ -47,8 +47,8 @@ export default function Home({ handleLogout }) {
     }
 
     return (
-        <Container>
-            <img className='backgroundImg' src={'https://i.imgur.com/UeA0BjR.jpg'} >
+        <Container className='backgroundImg'>
+            <img className='backgroundImg' src={'https://i.imgur.com/UeA0BjR.jpg'} alt="img" >
             </img>
             <PageHeader handleLogout={handleLogout} />
             <br />

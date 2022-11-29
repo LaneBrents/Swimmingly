@@ -4,11 +4,11 @@ import "./App.css";
 
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
-import ProfilePage from "../Profile/Profile";
+// import ProfilePage from "../Profile/Profile";
 
 import userService from "../../utils/userService";
 
-import HeatsheetPage from "../Heatsheet/Heatsheet";
+// import HeatsheetPage from "../Heatsheet/Heatsheet";
 import MyTeamPage from "../MyTeam/MyTeam";
 import Home from "../Home/Home";
 
