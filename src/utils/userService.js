@@ -72,10 +72,10 @@ function login(creds) {
 }
 
 
-export default {
+export default function userService ({
   signup, 
   logout,
   login,
   getUser,
   getProfile,
-};
+});

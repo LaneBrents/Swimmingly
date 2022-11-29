@@ -31,9 +31,9 @@ function setToken(token) {
     localStorage.removeItem('token');
   }
   
-  export default {
+  export default function tokenService ({
     setToken,
     getToken,
     removeToken,
     getUserFromToken
-  };
+  });
