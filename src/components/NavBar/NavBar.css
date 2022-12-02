@@ -1,0 +1,29 @@
+h2#logo.ui.header > a {
+    font-family: 'Pacifico';
+  }
+  
+  div.ui.bordeless.inverted.menu {
+    padding: 10px 0 5px 0;
+  }
+  
+  div.ui.inverted.menu {
+    border-radius: 0;
+  }
+  
+  .ui.menu {
+    border-radius: 0px;
+    margin: 0;
+  }
+  
+  .ui.borderless.nav-bar.menu {
+    height: 4rem;
+    background: rgb(22,58,105);
+  }
+
+  .nav-bar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+  }

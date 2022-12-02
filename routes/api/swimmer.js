@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const swimmerCtrl = require('../../controllers/swimmer')
+const swimmerCtrl = require('../../controllers/swimmer');
+const multer = require('multer');
+const upload = multer();
 
 router.post("/", swimmerCtrl.create);
 router.get('/', swimmerCtrl.getUserSwimmers);

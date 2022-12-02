@@ -52,7 +52,7 @@ export default function SignUpPage(props) {
 
       props.handleSignUpOrLogin();
 
-      navigate("/");
+      navigate("/home");
     } catch (err) {
 
       console.log(err);

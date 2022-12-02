@@ -37,7 +37,7 @@ export default function LoginPage(props) {
       // Route to wherever you want!
       props.handleSignUpOrLogin();
 
-      navigate("/");
+      navigate("/home");
 
     } catch (err) {
       // Invalid user data (probably duplicate email)

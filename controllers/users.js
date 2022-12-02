@@ -20,13 +20,7 @@ async function profile(req, res) {
   try {
     const user = await User.findOne({ username: req.params.username });
     if (!user) return res.status(404).json({ error: "User not found" });
-
-    // const posts = await Post.find({ user: user._id }).populate("user").exec();
-    // res.status(200).json({
-    //   data: {
-    //     user: user,
-    //   }
-    // });
+    res.status(200).json({ data: user });
   } catch (err) {
     console.log(err.message, " <- profile controller");
     res.status(400).json({ error: "Something went wrong" });
@@ -90,7 +84,6 @@ async function login(req, res) {
     if (!user) return res.status(401).json({ err: 'bad credentials' });
     // had to update the password from req.body.pw, to req.body password
     user.comparePassword(req.body.password, (err, isMatch) => {
-
       if (isMatch) {
         const token = createJWT(user);
         res.json({ token });
