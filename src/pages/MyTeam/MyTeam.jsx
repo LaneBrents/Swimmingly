@@ -53,20 +53,18 @@ export default function Home({ handleLogout }) {
             </img>
             <br />
             <div className="WelcomeText">
-                <h1>Welcome to Swimmingly!</h1>
-                <h3>Swimmingly is an easy team manager that tracks your swim teams members as well as their times and events</h3>
-                <br />
+                <h1>Swimmers</h1>
             </div>
             <Grid>
                 <Grid.Row centered>
                     <AddSwimmer className="AddSwimmer" handleAddSwimmer={handleAddSwimmer} />
                 </Grid.Row>
-                <Grid.Row centered>
+                <Grid.Row className='cards' centered>
                     <Grid.Column style={{ maxWidth: 750 }}>
                         <SwimmerGallery
                             swimmers={swimmers}
                             handleDeleteSwimmer={handleDeleteSwimmer}
-                            itemsPerRow={5}
+                            itemsPerRow={6}
                         />
                     </Grid.Column>
                 </Grid.Row>

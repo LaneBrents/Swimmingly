@@ -33,3 +33,7 @@ h2 {
 h2 {
     font-size: 2.1rem;
 }
+.cards {
+    overflow-y: scroll;
+    height: 375px;
+}

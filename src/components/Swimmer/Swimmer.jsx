@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Form, Button, Segment } from "semantic-ui-react";
+import './Swimmer.css'
 
 export default function SwimmerComponent({ swimmer, handleDeleteSwimmer }) {
 
@@ -16,8 +17,8 @@ export default function SwimmerComponent({ swimmer, handleDeleteSwimmer }) {
 
 
     return (
-        <Card key={swimmer._id} raised>
-            <Segment textAlign='center'>
+        <Card className='card' key={swimmer._id} raised>
+            <Segment className='content'>
                 <p>Name: {swimmer.name}</p>
                 <p>Grade: {swimmer.grade}</p>
                 <p>Gender: {swimmer.gender}</p>
