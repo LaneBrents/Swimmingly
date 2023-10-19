@@ -1,6 +1,9 @@
 {
   "name": "jwt-boilerplate",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.5.0"
+  },
   "private": true,
   "dependencies": {
     "@fullcalendar/daygrid": "^5.11.3",
